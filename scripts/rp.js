@@ -28,8 +28,7 @@ function generateUUID() { // Public Domain/MIT
         isStudent: false,
         isRelyingParty: true,
         claims: [
-            {"key": "alg","value": "ec256"},
-            {"key": "mth","value": "allegro"},
+          
         ]
     },
     created: function () {
