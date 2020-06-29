@@ -35,25 +35,29 @@ function generateUUID() { // Public Domain/MIT
     },
     methods: {
         loginClicked: function() {
-            if (this.userName == "issuer") {
-                this.isIssuer = true
-                this.isStudent = false
-                this.isRelyingParty = false
+            if (this.password == 'admin') {
+                if (this.userName == "issuer") {
+                    this.isIssuer = true
+                    this.isStudent = false
+                    this.isRelyingParty = false
+                } else {
+                    this.isIssuer = false
+                }
+                if (this.userName == "rp") {
+                    this.isRelyingParty=true
+                    this.isIssuer=false
+                    this.isStudent=false
+                } else {
+                    this.isRelyingParty =false
+                }
+                if ((this.userName != "issuer") && (this.userName != "rp")) {
+                    this.isStudent = true;
+                    this.isIssuer = false
+                    this.isRelyingParty = false
+                    window.localStorage.setItem("userName", this.userName);
+                }
             } else {
-                this.isIssuer = false
-            }
-            if (this.userName == "rp") {
-                this.isRelyingParty=true
-                this.isIssuer=false
-                this.isStudent=false
-            } else {
-                this.isRelyingParty =false
-            }
-            if ((this.userName != "issuer") && (this.userName != "rp")) {
-                this.isStudent = true;
-                this.isIssuer = false
-                this.isRelyingParty = false
-                window.localStorage.setItem("userName", this.userName);
+                alert("Bad password")
             }
         }
     }
