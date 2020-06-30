@@ -24,7 +24,8 @@ function generateUUID() { // Public Domain/MIT
             userName: '',
             isIssuer: false,
             isStudent: false,
-            isRelyingParty: false
+            isRelyingParty: false,
+            password: ''
     },
     created: function () {
       
