@@ -35,7 +35,7 @@ function generateUUID() { // Public Domain/MIT
     },
     methods: {
         loginClicked: function() {
-            alet(this.password)
+            alert(this.password)
             if (this.password == 'admin') {
                 if (this.userName == "issuer") {
                     this.isIssuer = true
